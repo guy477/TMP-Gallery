@@ -55,7 +55,7 @@ class AAE():
             history.append({"D":discriminator_loss[0],"G":generator_loss})
             
             # Save images from every hundereth epoch generated images
-            if epoch % 5 == 0:
+            if epoch % 100 == 0:
                 self._save_images(epoch)
                 
         self._plot_loss(history)

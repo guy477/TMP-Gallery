@@ -12,4 +12,4 @@ Making art with neural networks (Adversarial Autoencoders)
 
 ## Reference
 
-* [Rubikscode](https://rubikscode.net/2019/01/21/generating-images-using-adversarial-autoencoders-and-python/) - Intuitive [Keras](keras.io) implementation of the adversarial autoencoder.
+* [Rubikscode](https://rubikscode.net/2019/01/21/generating-images-using-adversarial-autoencoders-and-python/) - Intuitive [Keras](https://keras.io) implementation of the adversarial autoencoder.

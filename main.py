@@ -47,37 +47,32 @@ immatrix = array([array(Image.open('upd'+ '\\' + im2)).flatten()
               for im2 in imlist],'f')
 
 label=np.ones((num_samples,),dtype = int)
-label[0:89]=0
-label[89:187]=1
-label[187:]=2
+#a = int(len(imlist)/3)
+label[:]=0
+#label[a:2*a]=1
+#label[2*a:]=2
 
 
 data,Label = shuffle(immatrix,label, random_state=2)
 train_data = [data,Label]
 
-img=immatrix[14].reshape(img_rows,img_cols)
-plt.imshow(img)
-plt.imshow(img,cmap='gray')
-print (train_data[0].shape)
-print (train_data[1].shape)
-
-
-
 
 (X, y) = (train_data[0],train_data[1])
 
 
-# STEP 1: split X and y into training and testing sets
+# split into training and testing sets (I will have no test data)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=4)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, random_state=4)
 
 
 X_train = X_train.reshape(X_train.shape[0], img_rows, img_cols, 1)
 X_test = X_test.reshape(X_test.shape[0], 1, img_rows, img_cols)
 
+#convert pixel value to float
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 
+#compress to help with training time
 X_train /= 255
 X_test /= 255
 
