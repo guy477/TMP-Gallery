@@ -1,6 +1,10 @@
 ### TMP-Gallery
 Making art with neural networks (Adversarial Autoencoders)
 
+## Result
+
+![Skylines](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/100.png)
+
 ## ToDo
 * Have fun, make pictures. 
 * Use more images for training (current state is proof of concept)
