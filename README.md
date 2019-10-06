@@ -1,15 +1,15 @@
-### TMP-Gallery
+# TMP-Gallery
 Making art with neural networks (Adversarial Autoencoders)
 
-## Result
-# Skyline
+# Result
+### Skyline
 ![Skylines](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/105.png)
-# Blur Of People
+### Blur Of People
 ![BlurOfPeople](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/9900.png)
-# Blur Of Faces (Indifference)
+### Blur Of Faces (Indifference)
 Coming soon.
 
-## ToDo
+# ToDo
 * Have fun, make pictures. 
 * Use more images for training (current state is proof of concept)
 * Color?
