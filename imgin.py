@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 class ImageHelper(object):
     def save_image(self, generated, epoch, directory):
         plt.figure(figsize=(8.5, 11))
-        fig, axs = plt.subplots(5, 5)
+        fig, axs = plt.subplots(2, 2)
         count = 0
-        for i in range(5):
-            for j in range(5):
+        for i in range(2):
+            for j in range(2):
                 axs[i,j].imshow(generated[count, :,:,0], cmap='gray')
                 axs[i,j].axis('off')
                 count += 1

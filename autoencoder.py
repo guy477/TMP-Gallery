@@ -5,10 +5,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Keras modules
-from keras.layers import Input, Dense, Reshape, Flatten, Concatenate, LeakyReLU, Activation, concatenate
-from keras.models import Model
-from keras.optimizers import Adam
-import keras.backend as K
+
+from tensorflow.keras.layers import Input, Dense, Reshape, Flatten, Concatenate, LeakyReLU, Activation, concatenate
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
+import tensorflow.keras.backend as K
 
 class AAE():
     def __init__(self, image_shape, image_hepler):

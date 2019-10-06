@@ -1,13 +1,13 @@
 from imgin import ImageHelper
 from autoencoder import AAE
 import numpy as np
-from keras.datasets import fashion_mnist
+import pandas as pd
+import wget
+#from tensorflow.keras.datasets import fashion_mnist
 from sklearn.utils import shuffle
 import os
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-import os
 import theano
 from PIL import Image
 from numpy import *
@@ -21,12 +21,27 @@ img_channels = 1
 
 #%%
 
-path1 = 'assets'    #path of folder of images    
-path2 = 'upd'  #path of folder to save images    
+path1 = 'assets/Faces'    #path of folder of images    
+path2 = 'upd/Faces'  #path of folder to save images    
 
 listing = os.listdir(path1)
 num_samples=size(listing)
 print(num_samples)
+"""
+dat = pd.read_csv("assets/faceexp-comparison-data-train-public.csv", error_bad_lines=False)
+print(dat[dat.columns[5]])
+urls = dat[dat.columns[5]]"""
+"""
+ind = 0
+for url in urls:
+    print(url)
+    try:
+        wget.download(url, "assets/Faces/face{}.jpg".format(ind))
+        ind+=1
+    except:
+        pass
+    if(ind == 500):
+        break
 
 for file in listing:
     print(file)
@@ -35,15 +50,15 @@ for file in listing:
     gray = img.convert('L')
                 #need to do some more processing here          
     gray.save(path2 +'/' +  file, "JPEG")
-
+"""
 imlist = os.listdir(path2)
 
-im1 = array(Image.open('upd' + '/'+ imlist[0])) # open one image to get size
+im1 = array(Image.open('upd/Faces' + '/'+ imlist[0])) # open one image to get size
 m,n = im1.shape[0:2] # get the size of the images
 imnbr = len(imlist) # get the number of images
 
 # create matrix to store all flattened images
-immatrix = array([array(Image.open('upd'+ '\\' + im2)).flatten()
+immatrix = array([array(Image.open('upd\\Faces'+ '\\' + im2)).flatten()
               for im2 in imlist],'f')
 
 label=np.ones((num_samples,),dtype = int)
@@ -93,4 +108,4 @@ print(X_train[0].shape)
 
 image_helper = ImageHelper()
 aae = AAE(X_train[0].shape, image_helper)
-aae.train(125, X_train, batch_size=32)
+aae.train(10000, X_train, batch_size=32)
