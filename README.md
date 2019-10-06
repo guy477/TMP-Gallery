@@ -6,7 +6,8 @@ Making art with neural networks (Adversarial Autoencoders)
 ![Skylines](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/105.png)
 # Blur Of People
 ![BlurOfPeople](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/9900.png)
-
+# Blur Of Faces (Indifference)
+Coming soon.
 
 ## ToDo
 * Have fun, make pictures. 
