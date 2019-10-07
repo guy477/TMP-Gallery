@@ -5,7 +5,7 @@ Making art with neural networks (Adversarial Autoencoders)
 ### Skyline
 ![Skylines](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/105.png)
 ### Blur Of People
-![BlurOfPeople](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/9900.png)
+![BlurOfPeople](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/9900-blurredPeople.png)
 ### Blur Of Faces (Indifference)
 ![BlurredFaces](https://github.com/guy477/TMP-Gallery/blob/master/generated-aae/1700-.png)
 
