@@ -8,7 +8,8 @@ from sklearn.utils import shuffle
 import os
 import matplotlib.pyplot as plt
 import matplotlib
-import theano
+#import theano
+import FaceCrop as fc
 from PIL import Image
 from numpy import *
 from sklearn.model_selection import train_test_split
@@ -22,7 +23,7 @@ img_channels = 1
 #%%
 
 path1 = 'assets/Faces'    #path of folder of images    
-path2 = 'upd/Faces'  #path of folder to save images    
+path2 = 'upd/Facess'  #path of folder to save images    
 
 listing = os.listdir(path1)
 num_samples=size(listing)
@@ -45,23 +46,28 @@ for url in urls:
 
 for file in listing:
     print(file)
-    im = Image.open(path1 + '/' + file)  
-    img = im.resize((img_rows,img_cols))
-    gray = img.convert('L')
-                #need to do some more processing here          
-    gray.save(path2 +'/' +  file, "JPEG")
+    #im = Image.open(path1 + '/' + file)  
+    gray = fc.facecrop(path1 + '/' + file)
+    try:
+        img = Image.open(path2+'/'+file).resize((img_rows,img_cols))
+        gray = img.convert('L')
+                    #need to do some more processing here          
+        gray.save(path2 +'/' +  file, "JPEG")
+    except:
+        print("no face :(")
+
 """
 imlist = os.listdir(path2)
 
-im1 = array(Image.open('upd/Faces' + '/'+ imlist[0])) # open one image to get size
+im1 = array(Image.open('upd/Facess' + '/'+ imlist[0])) # open one image to get size
 m,n = im1.shape[0:2] # get the size of the images
 imnbr = len(imlist) # get the number of images
-
+print(imnbr)
 # create matrix to store all flattened images
-immatrix = array([array(Image.open('upd\\Faces'+ '\\' + im2)).flatten()
+immatrix = array([array(Image.open('upd\\Facess'+ '\\' + im2)).flatten()
               for im2 in imlist],'f')
 
-label=np.ones((num_samples,),dtype = int)
+label=np.ones((imnbr,),dtype = int)
 #a = int(len(imlist)/3)
 label[:]=0
 #label[a:2*a]=1

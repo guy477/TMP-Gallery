@@ -6,13 +6,20 @@ import matplotlib.pyplot as plt
 class ImageHelper(object):
     def save_image(self, generated, epoch, directory):
         plt.figure(figsize=(8.5, 11))
-        fig, axs = plt.subplots(2, 2)
+        fig, axs = plt.subplots(1,2)
         count = 0
+        """
         for i in range(2):
             for j in range(2):
                 axs[i,j].imshow(generated[count, :,:,0], cmap='gray')
                 axs[i,j].axis('off')
                 count += 1
+        """
+        for i in range(2):
+                axs[i].imshow(generated[count, :,:,0], cmap='gray')
+                axs[i].axis('off')
+                count += 1
+                
         fig.savefig("{}/{}.png".format(directory, epoch), dpi=350)
         plt.close()
         
